@@ -1,0 +1,129 @@
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.login-block {
+  background: #0e4fb7;
+  background: -webkit-linear-gradient(to bottom, #6ba3ff, #0e4fb7);
+  background: linear-gradient(to bottom, #6ba3ff, #0e4fb7);
+  background-position: center;
+  float: left;
+  width: 100%;
+  padding: 50px 0;
+  height: 100vh;
+
+}
+
+.banner-sec {
+  background-image: url('../images/src/bg-1.jpg');
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.2) 100%), url('../images/src/bg-1.jpg');
+  background-size: cover;
+  min-height: 500px;
+  border-radius: 0 10px 10px 0;
+  padding: 0;
+}
+
+.container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+  border-radius: 0 10px 10px 0;
+}
+
+.carousel-caption {
+  text-align: left;
+  left: 5%;
+}
+
+.login-sec {
+  padding: 50px 30px;
+  position: relative;
+}
+
+.copy-text {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  font-size: 13px;
+  text-align: center;
+  color: #FFF;
+}
+
+.copy-text i {
+  color: #6ba3ff;
+}
+
+.copy-text a {
+  color: #6ba3ff;
+}
+
+.login-sec h2 {
+  margin-bottom: 30px;
+  font-weight: 800;
+  font-size: 30px;
+  color: #0e4fb7;
+}
+
+.login-sec h2:after {
+  content: " ";
+  width: 100px;
+  height: 5px;
+  background: #6ba3ff;
+  display: block;
+  margin-top: 20px;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.btn-login {
+  background: #0e4fb7;
+  color: #fff;
+  font-weight: 600;
+  ;
+}
+
+.banner-text {
+  width: 70%;
+  position: absolute;
+  bottom: 40px;
+  padding-left: 20px;
+}
+
+.banner-text h2 {
+  color: #FFF;
+  font-weight: 600;
+}
+
+.banner-text h2:after {
+  content: " ";
+  width: 100px;
+  height: 5px;
+  background: #FFF;
+  display: block;
+  margin-top: 20px;
+  border-radius: 3px;
+}
+
+.banner-text p {
+  color: #FFF;
+  text-align: justify;
+}
+
+.d-block{
+  display: block !important;
+}
+
+.img-fluid{
+  max-width: 100%;
+  height: auto;
+}
+
+.float-right{
+  float: right !important;
+}
