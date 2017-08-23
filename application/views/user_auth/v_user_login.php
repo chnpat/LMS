@@ -3,7 +3,7 @@
 	   <div class="row">
        <div class="col-md-4 login-sec">
          <h2 class="text-center">เข้าสู่ระบบ</h2>
-         <form class="login-form">
+         <form class="login-form" method="post" action="<?php echo base_url()?>c_user_auth/login_process" role="login">
            <div class="form-group">
              <label for="in_user_name" class="text-uppercase">ชื่อผู้ใช้ - Username</label>
              <input type="text" class="form-control" id="in_user_name" name="in_user_name" placeholder="" required="" oninvalid="this.setCustomValidity('กรุณากรอกชื่อผู้ใช้งาน')" oninput="setCustomValidity('')">
@@ -27,13 +27,13 @@
              <div class="banner-text">
                <h2>E-Learning Management System</h2>
                <p>ระบบจัดการเรียนการสอนอิเล็กทรอนิกส์ เป็นระบบซึ่งเป็นสื่อกลางระหว่างผู้เรียน และอาจารย์ผู้สอน โดยระบบจะอนุญาตให้อาจารย์ผู้สอนกำหนดเนื้อหา แบบฝึกหัด และข้อสอบในแต่ละรายวิชา เพื่อให้ผู้เรียนสามารถเข้าสู่ระบบเพื่อศึกษา ฝึกฝน และทำข้อสอบตามบทเรียนที่กำหนดไว้ได้</p>
-               <button class="btn btn-primary">สมัครสมาชิก</button>
-               <button class="btn btn-warning">ลืมรหัสผ่าน</button>
+               <a class="btn btn-primary" href="<?php echo base_url()?>c_user_register/">สมัครสมาชิก</a>
+               <a class="btn btn-warning" href="<?php echo base_url()?>c_user_forgot/">ลืมรหัสผ่าน</a>
              </div>
            </div>
          </div>
        </div>
      </div>
    </div>
-   <div class="copy-text center-align" id="copy-text">เวอร์ชัน <a href="#">1.0.0</a> - สงวนลิขสิทธิ์การใช้งาน <i class="fa fa-copyright"></i> <a href="http://www.edu.ku.ac.th/default.php">คณะศึกษาศาสตร์และพัฒนศาสตร์ มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน</a></div>
+   <div class="copy-text center-align hidden-sm hidden-xs" id="copy-text">เวอร์ชัน <a href="#">1.0.0</a> - สงวนลิขสิทธิ์การใช้งาน <i class="fa fa-copyright"></i> <a href="http://www.edu.ku.ac.th/default.php">คณะศึกษาศาสตร์และพัฒนศาสตร์ มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน</a></div>
 </section>

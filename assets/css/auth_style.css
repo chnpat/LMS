@@ -12,7 +12,8 @@
   float: left;
   width: 100%;
   padding: 50px 0;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 
 }
 
@@ -85,7 +86,11 @@
   background: #0e4fb7;
   color: #fff;
   font-weight: 600;
-  ;
+}
+
+.btn-login:hover, .btn-login:focus, .btn-login:active{
+  color: #fff;
+  background: #6ba3ff;
 }
 
 .banner-text {
@@ -126,4 +131,12 @@
 
 .float-right{
   float: right !important;
+}
+
+.title-selector{
+  width: 20%;
+}
+
+.asterisk{
+  color: red;
 }
