@@ -6,6 +6,7 @@ class c_dashboard extends CI_Controller{
   public function __construct()
   {
     parent::__construct();
+    $this->load->model(array('m_user'));
   }
 
   function index()
@@ -20,9 +21,15 @@ class c_dashboard extends CI_Controller{
   }
 
   function dashboard_load(){
-    $data = array('title' => "Dashboard" );
-    $this->load->view('dashboard/v_dashboard.php', $data);
-    session_destroy();
+    $username = $this->session->userdata('user_name');
+    $data = array(
+      'title'     =>  "Dashboard",
+      'user_obj'  =>  $this->m_user->get_user($username)
+      );
+    $this->load->view('template/app_header', $data);
+    $this->load->view('dashboard/v_dashboard');
+    $this->load->view('template/app_footer');
+
   }
 
 }

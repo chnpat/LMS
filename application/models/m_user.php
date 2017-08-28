@@ -55,6 +55,20 @@ class m_user extends CI_Model{
     }
   }
 
+  public function get_user($username){
+    $query = $this->db->query(
+      " SELECT *
+        FROM M_USER
+        WHERE user_name = '".$username."'"
+    );
+    if($query->num_rows() == 1){
+      return $query->result_array()[0];
+    }
+    else{
+      return false;
+    }
+  }
+
   public function login_user($username, $password){
     $query = $this->db->query(
       " SELECT user_id
