@@ -1,6 +1,35 @@
 <div class="content-wrapper">
+  <section class="content-header">
+    <h1>
+      <i class="fa fa-dashboard"></i> Dashboard - แดชบอร์ด
+    </h1>
+  </section>
   <section class="content">
-    <span class="text-red">Hello</span>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos cupiditate, quasi tempora facere autem sequi rerum distinctio necessitatibus quia aspernatur eum magnam praesentium inventore vitae maxime quae at veniam explicabo unde quo perferendis, iste accusantium? Odio molestiae deserunt quia, debitis officiis cupiditate incidunt animi nisi cumque alias dolorem, veniam accusantium, pariatur possimus impedit quasi, quisquam reprehenderit? Debitis quo magnam adipisci rerum illo modi maiores, nemo excepturi beatae corporis suscipit reiciendis minus voluptatem impedit tempore voluptas perspiciatis consequuntur repudiandae non. Aspernatur architecto repudiandae facilis, et accusantium tempore, molestiae, velit optio, aliquam aperiam minus beatae consectetur. Dignissimos voluptatibus similique, ex? Cumque voluptate atque expedita, ipsam repellendus unde facilis aspernatur omnis placeat neque pariatur quia velit tempore quod quaerat deserunt quisquam exercitationem eum, porro obcaecati! Distinctio qui atque ex at dolore dolores, quod molestias, quasi debitis doloribus quae optio vero quisquam necessitatibus cupiditate porro praesentium impedit accusantium, veniam ab non nobis facere amet eum. Id voluptates voluptatibus rem, facilis modi consequatur? Hic impedit consequuntur error fuga optio facere rem repudiandae, sequi pariatur, delectus eligendi ipsa doloremque non nesciunt minus aspernatur accusantium aut aliquid maiores voluptatum corporis, officia praesentium unde. Dolorem, provident harum autem odio dolor est natus doloribus tempora beatae consequatur cupiditate necessitatibus.
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <span class="box-title"><?=$announce_title?></span>
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse" data-tooltip="tooltip" title data-original-title="Collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="box-body">
+        <?=$announce_detail?>
+      </div>
+    </div>
+    <div class="box box-info">
+      <div class="box-header with-border">
+        <span class="box-title"><b>ข่าวสาร</b></span>
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse" data-tooltip="tooltip" title data-original-title="Collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="box-body">
+        <!-- TODO: Adds timeline component -->
+      </div>
+    </div>
   </section>
 </div>

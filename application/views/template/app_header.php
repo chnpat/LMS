@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/css/AdminLTE.min.css" />
     <link rel="stylesheet" href="<?php echo base_url()?>assets/css/adminSkin/_all-skins.min.css" />
   </head>
-  <body class="skin-blue sidebar-mini">
+  <body class="skin-blue fixed sidebar-mini">
     <div class="wrapper">
       <header class="main-header">
         <a href="<?php echo base_url()?>c_dashboard/index" class="logo">
@@ -121,7 +121,7 @@
                 </li>
                 <!-- Teacher Question Set List  -->
                 <li>
-                  <a href="<?base_url()?>c_question_set_management/index">
+                  <a href="<?=base_url()?>c_question_set_management/index">
                     <i class="fa fa-circle-o text-red"></i> <span>ชุดข้อสอบ</span>
                   </a>
                 </li>
@@ -143,13 +143,13 @@
             </li>
             <!-- User Management -->
             <li class="treeview">
-              <a href="<?base_url()?>c_user_management/index">
+              <a href="<?=base_url()?>c_user_management/index">
                 <i class="fa fa-users text-green"></i> <span>จัดการบัญชีผู้ใช้งาน</span>
               </a>
             </li>
             <!-- Admin Config. -->
             <li class="treeview">
-              <a href="<?base_url()?>c_admin_config/index">
+              <a href="<?=base_url()?>c_admin_config/index">
                 <i class="fa fa-gears text-green"></i> <span> ตั้งค่าระบบ</span>
               </a>
             </li>

@@ -49,6 +49,9 @@ class m_user extends CI_Model{
       if($this->db->affected_rows() > 0){
         return true;
       }
+      else{
+        return false;
+      }
     }
     else {
       return false;
@@ -68,6 +71,12 @@ class m_user extends CI_Model{
       return false;
     }
   }
+
+  //TODO: adds a function to get all user list
+
+  //TODO: adds a function to update user
+
+  //TODO: adds a function to delete users
 
   public function login_user($username, $password){
     $query = $this->db->query(
