@@ -17,7 +17,7 @@ class m_admin_config extends CI_Model{
         WHERE   config_id = '.$config_id
     );
     if($query->num_rows() == 1){
-      return $query->result_array();
+      return $query->result_array()[0];
     }
     else{
       return false;

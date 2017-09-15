@@ -28,8 +28,8 @@ class c_dashboard extends CI_Controller{
       );
 
     $config = array(
-      'announce_title'  =>  $this->m_admin_config->get_config(1)[0]['config_value'],
-      'announce_detail' =>  $this->m_admin_config->get_config(2)[0]['config_value']
+      'announce_title'  =>  $this->m_admin_config->get_config(1)['config_value'],
+      'announce_detail' =>  $this->m_admin_config->get_config(2)['config_value']
     );
 
     $this->load->view('template/app_header', $data);
