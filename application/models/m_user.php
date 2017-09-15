@@ -72,7 +72,38 @@ class m_user extends CI_Model{
     }
   }
 
-  //TODO: adds a function to get all user list
+  public function get_user_all_count(){
+    return $this->db->count_all('M_USER');
+  }
+
+  public function get_user_all_paging($limit, $start){
+    // $this->db->limit($limit, $start);
+    // $query = $this->db->get('M_USER');
+    $query = $this->db->query(
+      'SELECT *
+       FROM   M_USER
+       LIMIT '.$start.','.$limit);
+    if($query->num_rows() > 0){
+      return $query->result_array();
+    }
+    else{
+      return false;
+    }
+  }
+
+  public function get_user_all(){
+    $query = $this->db->query(
+      ' SELECT *
+        FROM M_USER'
+    );
+    if($query->num_rows() > 0){
+      return $query->result_array();
+    }
+    else{
+      return false;
+    }
+  }
+
 
   //TODO: adds a function to update user
 

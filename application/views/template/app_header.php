@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionic-framework/2.0.0-beta.2/ionic.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/css/AdminLTE.min.css" />
     <link rel="stylesheet" href="<?php echo base_url()?>assets/css/adminSkin/_all-skins.min.css" />
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/app_style.css" />
   </head>
   <body class="skin-blue fixed sidebar-mini">
     <div class="wrapper">
