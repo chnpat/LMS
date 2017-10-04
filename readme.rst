@@ -17,17 +17,17 @@ Changelog and New Features
 **************************
 
 Version 0.1.0
-- Added basic files for starting a project.
+-  `Added basic files for starting a project.
 
 Version 0.2.0
-- Added a login view along with user's controller and model.
-- Added a basic student registration view and its corresponding model functions.
-- Applied an AdminLTE theme to project and customization to use it as templates.
-- Added a Dashboard view along with the controller and model.
-- Added an Admin Configuration view and its controller and model functions.
+-  `Added a login view along with user's controller and model.
+-  `Added a basic student registration view and its corresponding model functions.
+-  `Applied an AdminLTE theme to project and customization to use it as templates.
+-  `Added a Dashboard view along with the controller and model.
+-  `Added an Admin Configuration view and its controller and model functions.
 
 Version 0.3.0
-- Added a User Management Functionality (User Account List view and User Account Detail view)
+-  `Added a User Management Functionality (User Account List view and User Account Detail view)
 
 *******************
 Server Requirements
