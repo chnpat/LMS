@@ -14,13 +14,13 @@
           </div>
         </div>
       </div>
-      <footer class="main-footer">
+      <footer class="main-footer hidden-xs">
         <div class="pull-right">
           <b>E-Learning Management System</b> | เวอร์ชัน 1.0.0
         </div>
         <strong>สงวนลิขสิทธิ์การใช้งาน <i class="fa fa-copyright"></i> <a href="http://www.edu.ku.ac.th/default.php">คณะศึกษาศาสตร์และพัฒนศาสตร์ มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน</a></strong>
       </footer>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
       <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.min.js" type="text/javascript"></script>
       <script src="<?php echo base_url(); ?>assets/js/app.min.js" type="text/javascript"></script>

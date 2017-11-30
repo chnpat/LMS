@@ -52,7 +52,7 @@
                   </div>
                   <input type="firstname" class="form-control required" id="in_reg_firstname" name="in_reg_firstname" placeholder="กรอกชื่อจริง" aria-describedby="firstname_help" oninvalid="this.setCustomValidity('กรุณากรอกชื่อจริง')" oninput="setCustomValidity('')" required>
                 </div>
-                <small id="firstname_help" class="form-text text-muted">ชื่อจริงตามที่ระบุไว้ในบัตรนิสิตเท่านั้น</small>
+                <small id="firstname_help" class="form-text text-muted">ชื่อจริงตามที่ระบุไว้ในบัตรประจำตัวนิสิตเท่านั้น</small>
               </div>
             </div>
             <div class="col-md-6">

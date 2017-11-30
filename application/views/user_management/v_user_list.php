@@ -5,79 +5,118 @@
     </h1>
   </section>
   <section class="content">
+    <div class="col-12">
+      <?php if($this->session->flashdata('user_list_msg')){ ?>
+        <div class="alert alert-dismissible alert-success">
+            <button class="close" data-dismiss="alert">&times;</button>
+            <strong class="text text-black"><?=$this->session->flashdata('user_list_msg');?></strong>
+        </div>
+      <?php } ?>
+      <?php if($this->session->flashdata('user_list_err')){ ?>
+        <div class="alert alert-dismissible alert-danger">
+            <button class="close" data-dismiss="alert">&times;</button>
+            <strong class="text text-black"><?=$this->session->flashdata('user_list_err');?></strong>
+        </div>
+      <?php } ?>
+    </div>
     <div class="box box-info">
       <div class="box-header with-border">
         <div class="pull-left">
-          <a class="btn btn-success btn-sm" href="<?=base_url()?>c_user_detail/index"><i class="fa fa-plus"></i>&nbsp;&nbsp;เพิ่มบัญชี</a>
-        </div>
-        <div class="pull-right">
-          ค้นหา: &nbsp;&nbsp;<input type="text" name="in_search_keyword" value=""></input>
+          <a class="btn btn-success btn-sm" href="<?=base_url()?>c_user_management/add"><i class="fa fa-plus"></i>&nbsp;&nbsp;เพิ่มบัญชี</a>
         </div>
       </div>
       <div class="box-body">
-        <table class="table table-bordered table-responsive table-hover">
-          <thead class="thead-inverse">
-            <tr class="bg-info">
-              <th class="text-left"><a href="" class="asc">#</a></th>
-              <th class="text-center col-md-2">ชื่อผู้ใช้งาน</th>
-              <th class="text-center col-md-2 hidden-xs hidden-sm">ชื่อจริง</th>
-              <th class="text-center col-md-3 hidden-xs hidden-sm">นามสกุล</th>
-              <th class="text-center col-md-2">บทบาท</th>
-              <th class="text-center col-md-1">สถานะ</th>
-              <th class="col-md-2"></th>
-            </tr>
-          </thead>
-          <?php foreach ($user_arr as $key => $value) { ?>
-          <tr>
-            <td class="text-center"><b><?=$value['user_id']?></b></td>
-            <td><?=$value['user_name']?></td>
-            <td class="hidden-xs hidden-sm"><?=$value['user_first_name']?></td>
-            <td class="hidden-xs hidden-sm"><?=$value['user_last_name']?></td>
-            <td class="text-center">
-              <?php
-              if($value['user_role'] == "A"){
-                echo "<span class='label label-danger'>Administrator</span>";
-              }
-              else if($value['user_role'] == "T"){
-                echo "<span class='label label-success'>Lecturer</span>";
-              }
-              else{
-                echo "<span class='label label-info'>Student</span>";
-              }
-              ?>
-            </td>
-            <td class="text-center">
-              <?php
-              if($value['user_status'] == "A"){
-                echo '<span class="text-green"><i class="fa fa-check"></i> Active</span>';
-              }
-              else{
-                echo '<span class="text-red"><i class="fa fa-remove"></i> Inactive</span>';
-              }
-              ?>
-            </td>
-            <td>
-              <a class="btn btn-warning btn-sm" href="<?=base_url()?>c_user_detail/index/<?=$value['user_id']?>">
-                <i class="fa fa-edit"></i> แก้ไข
-              </a>
-              <a class="btn btn-danger btn-sm" href="<?=base_url()?>c_user_management/delete/<?=$value['user_id']?>">
-                <i class="fa fa-remove"></i> ลบ
-              </a>
-            </td>
-          </tr>
-        <?php } ?>
-        </table>
-      </div>
-      <div class="box-footer">
-        <div class="pull-left pageDetail">
-          <label>กำลังแสดงรายการที่ <span class="text text-blue"><?=($start+1)?></span> ถึง <span class="text text-blue"><?=(($start + $limit > $user_count)? $user_count : ($start + $limit)) ?></span> จากทั้งหมด <span class="text text-blue"><?=$user_count?></span> รายการ</label>
-          <br/>
-          <label>ใช้เวลาค้นหา <span class="text text-red">{elapsed_time}</span> วินาที</label>
-        </div>
-        <div class="pull-right">
-          <?php echo $links; ?>
+        <div class="table-responsive">
+          <table id="user-table" class="table table-responsive table-bordered display responsive nowrap" cellspacing="0">
+            <thead>
+              <tr class="bg-info">
+                <th class="text-center col-md-1">#</th>
+                <th class="text-center col-md-2">ชื่อผู้ใช้งาน</th>
+                <th class="text-center col-md-2">ชื่อจริง</th>
+                <th class="text-center col-md-2">นามสกุล</th>
+                <th class="text-center col-md-1">บทบาท</th>
+                <th class="text-center col-md-1">สถานะ</th>
+                <th class="col-md-1"></th>
+                <th class="col-md-1"></th>
+                <th class="col-md-1"></th>
+              </tr>
+            </thead>
+          </table>
         </div>
       </div>
     </div>
   </section>
 </div>
+<div class="modal fade" id="delete-user-confirm" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <b>คุณต้องการยืนยันการลบบัญชีผู้ใช้นี้หรือไม่ ?</b>
+      </div>
+      <div class="modal-body">
+        การลบบัญชีผู้ใช้จะลบข้อมูลส่วนบุคคลทั้งหมดของผู้ใช้งาน โปรดตรวจสอบให้ถูกต้อง หากยืนยันแล้วจะไม่สามารถกู้คืนข้อมูลได้ ไม่ว่ากรณีใด ๆ
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">ยกเลิก</button>
+        <a class="btn btn-danger btn-ok">ยืนยันการลบ</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+$('#delete-user-confirm').on('show.bs.modal', function(e) {
+  $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+});
+</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#user-table').DataTable({
+      "responsive":true,
+      "autoWidth":false,
+      "pageLength":20,
+      "lengthMenu":[[5, 10, 20, 50, 100], [5, 10, 20, 50, 100]],
+      "order":[],
+      "ajax":{
+        url   : "<?=site_url("c_user_management/fetch_user")?>",
+        type  : 'GET'
+      },
+      "columnDefs":[
+           {
+                "targets":[5, 6, 7, 8],
+                "orderable":false,
+                "searchable":false
+           }
+      ],
+      "columns": [
+        { responsivePriority: 1 },
+        { responsivePriority: 2 },
+        { responsivePriority: 8 },
+        { responsivePriority: 7 },
+        { responsivePriority: 6 },
+        { responsivePriority: 3 },
+        { responsivePriority: 4 },
+        { responsivePriority: 5 }
+      ],
+      "language":{
+        "emptyTable":     "ไม่พบข้อมูลบัญชีผู้ใช้งาน",
+        "info":           "กำลังแสดงรายการที่ <b>_START_</b> ถึง <b>_END_</b> จากทั้งหมด <span class='text text-red'><b>_TOTAL_</b></span> รายการ",
+        "infoEmpty":      "ไม่มีรายการให้แสดง",
+        "infoFiltered":   "(คัดกรองจากทั้งหมด _MAX_ รายการ)",
+        "lengthMenu":     "แสดงข้อมูลบัญชีผู้ใช้งานหน้าละ  _MENU_  รายการ",
+        "search":         "ค้นหา: ",
+        "zeroRecords":    "ไม่พบรายการตามคำค้นที่กรอก",
+        "paginate":{
+          "first":        "หน้าแรก",
+          "last":         "สุดท้าย",
+          "next":         "ถัดไป",
+          "previous":     "ก่อนหน้า"
+        },
+        "aria":{
+          "sortAscending":  ": เรียงจากน้อยไปหามาก",
+          "sortDescending": ": เรียงจากมากไปหาน้อย"
+        }
+      }
+    });
+
+  });
+</script>

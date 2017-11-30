@@ -72,19 +72,14 @@ class m_user extends CI_Model{
     }
   }
 
-  public function get_user_all_count(){
-    return $this->db->count_all('M_USER');
-  }
-
-  public function get_user_all_paging($limit, $start){
-    // $this->db->limit($limit, $start);
-    // $query = $this->db->get('M_USER');
+  public function get_user_by_id($id){
     $query = $this->db->query(
-      'SELECT *
-       FROM   M_USER
-       LIMIT '.$start.','.$limit);
-    if($query->num_rows() > 0){
-      return $query->result_array();
+      " SELECT *
+        FROM M_USER
+        WHERE user_id = '".$id."'"
+    );
+    if($query->num_rows() == 1){
+      return $query->result_array()[0];
     }
     else{
       return false;
@@ -104,10 +99,92 @@ class m_user extends CI_Model{
     }
   }
 
+  public function get_user_dt(){
+    return $this->db->get('M_USER');
+  }
 
-  //TODO: adds a function to update user
+  public function update_user($id, $data){
+    $query_select = $this->db->query(
+      ' SELECT  * 
+        FROM    M_USER
+        WHERE   user_id = "'.$id.'"'
+    );
+    if($query_select->num_rows() > 0){
+      
+      $this->db->where('user_id', $id);
+      $query = $this->db->update('M_USER', $data);
+      
 
-  //TODO: adds a function to delete users
+      if($this->db->affected_rows() == 1){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+    else{
+      return false;
+    }
+  }
+
+
+  public function update_user_password($id, $old, $new){
+    $query = $this->db->query(
+      ' SELECT *
+        FROM M_USER
+        WHERE user_id = "'.$id.'"
+        AND   user_password = "'.$old.'"'
+    );
+
+    if($query->num_rows() == 1){
+      $this->db->query(
+        ' UPDATE M_USER
+          SET user_password = "'.$new.'"
+          WHERE user_id = '.$id.';'
+        );
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  public function update_status_user($id, $status){
+    $query = $this->db->query(
+      ' SELECT *
+        FROM M_USER
+        WHERE user_id = '.$id.';'
+    );
+    if($query->num_rows() == 1){
+      $this->db->query(
+        ' UPDATE M_USER
+          SET user_status = "'.$status.'"
+          WHERE user_id = '.$id.';'
+        );
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  public function delete_user($id){
+    $query = $this->db->query(
+      ' SELECT *
+        FROM M_USER
+        WHERE user_id = '.$id.';'
+    );
+    if($query->num_rows() == 1){
+      $this->db->query(
+        ' DELETE FROM M_USER
+          WHERE user_id = '.$id.';'
+        );
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 
   public function login_user($username, $password){
     $query = $this->db->query(
