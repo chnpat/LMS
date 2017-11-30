@@ -17,17 +17,20 @@ Changelog and New Features
 **************************
 
 **Version 1.0.0**
-1. Added basic files for starting a project.
+
+- Added basic files for starting a project.
 
 **Version 1.1.0**
-1. Added a login view along with user's controller and model.
-2. Added a basic student registration view and its corresponding model functions.
-3. Applied an AdminLTE theme to project and customization to use it as templates.
-4. Added a Dashboard view along with the controller and model.
-5. Added an Admin Configuration view and its controller and model functions.
+
+- Added a login view along with user's controller and model.
+- Added a basic student registration view and its corresponding model functions.
+- Applied an AdminLTE theme to project and customization to use it as templates.
+- Added a Dashboard view along with the controller and model.
+- Added an Admin Configuration view and its controller and model functions.
 
 **Version 1.2.0**
-6. Added a User Management Functionality (User Account List view and User Account Detail view)
+
+- Added a User Management Functionality (User Account List view and User Account Detail view)
 
 *******************
 Server Requirements
@@ -39,13 +42,16 @@ PHP version 5.6 or newer is recommended.
 Installation
 ************
 
-1. Place the folder in the root directory of your hosting server.\n
+1. Place the folder in the root directory of your hosting server.
+
 2. Run the SQL script (in the /LMS/SQL_Script/ folder) in any MySQL server
-management application you used.\n
+management application you used.
+
 3. Set the database connection configuration (in the /LMS/application/config/database.php)
-by specifying username, password, and database name.\n
+by specifying username, password, and database name.
+
 4. Set the base URL to the domain name you used
-(in the /LMS/application/config/config.php file - Line: 26)\n
+(in the /LMS/application/config/config.php file - Line: 26)
 
 *******
 License
