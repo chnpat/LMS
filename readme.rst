@@ -16,18 +16,18 @@ latest stable release please visit the `CodeIgniter Downloads
 Changelog and New Features
 **************************
 
-Version 0.1.0
--  `Added basic files for starting a project.
+**Version 1.0.0**
+1. Added basic files for starting a project.
 
-Version 0.2.0
--  `Added a login view along with user's controller and model.
--  `Added a basic student registration view and its corresponding model functions.
--  `Applied an AdminLTE theme to project and customization to use it as templates.
--  `Added a Dashboard view along with the controller and model.
--  `Added an Admin Configuration view and its controller and model functions.
+**Version 1.1.0**
+1. Added a login view along with user's controller and model.
+2. Added a basic student registration view and its corresponding model functions.
+3. Applied an AdminLTE theme to project and customization to use it as templates.
+4. Added a Dashboard view along with the controller and model.
+5. Added an Admin Configuration view and its controller and model functions.
 
-Version 0.3.0
--  `Added a User Management Functionality (User Account List view and User Account Detail view)
+**Version 1.2.0**
+6. Added a User Management Functionality (User Account List view and User Account Detail view)
 
 *******************
 Server Requirements
